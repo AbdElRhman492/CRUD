@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="style/main.css">
+    <title>Radwa Optics | System Management</title>
+  </head>
+
+  <body>
+    <div class="crud">
+      <div class="head">
+        <h1>Radwa Optics</h1>
+        <h2>System Management</h2>
+      </div>
+      <div class="id_gen">
+        <div class="inp_holder">
+          <input type="hidden" value="8" id="id_input_gen">
+        </div>
+        <button id="id_btn">Generate ID</button>
+        <div class="inp_holder">
+          <input type="text" id="id_output" readonly>
+        </div>
+        <span onclick="copy()" class="material-symbols-outlined copy_icon">
+          content_copy
+        </span>
+      </div>
+      <div class="inputs">
+        <div class="inp_holder">
+          <input type="text" id="id" placeholder="Enter Glass id" maxlength="8" required>
+        </div>
+        <div class="price">
+          <div class="inp_holder">
+            <input onkeyup="getTotal()" type="number" name="price" id="price" placeholder="Enter The Price" required>
+          </div>
+          <div class="inp_holder">
+            <input onkeyup="getTotal()" type="number" name="texes" id="texes" placeholder="Enter The Texes">
+          </div>
+          <div class="inp_holder">
+            <input onkeyup="getTotal()" type="number" name="discount" id="discount" placeholder="Enter The Discount">
+          </div>
+          <small id="total"></small>
+        </div>
+        <div class="inp_holder">
+          <input type="number" name="count" id="count" placeholder="Enter The Number Of Glasses">
+        </div>
+        <div class="inp_holder">
+          <input type="text" placeholder="Enter The Category Name" id="category" required>
+        </div>
+        <button type="submit" id="submit">Add</button>
+      </div>
+      <div class="outputs">
+        <div class="search" id="search_block">
+          <div class="inp_holder">
+            <input type="search" onkeyup="searchData(this.value)" name="search" placeholder="Search By Id" id="search">
+          </div>
+          <div class="btns">
+            <button type="submit" onclick="getSearchMood(this.id)" id="search_id">Search By ID</button>
+            <button type="submit" onclick="getSearchMood(this.id)" id="search_cat">Search By Category</button>
+          </div>
+          <div id="delete_all"></div>
+        </div>
+        <div class="table_container">
+          <table>
+            <thead>
+              <tr>
+                <th>#ID</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>total</th>
+                <th>Category</th>
+                <th>Control</th>
+              </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+
+</html>
